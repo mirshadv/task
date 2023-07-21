@@ -76,7 +76,11 @@
                 <tr>
                     <td class="auto-style4">Date of birth:</td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox3" runat="server" Height="16px" Width="193px"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownList3" runat="server">
+                            <asp:ListItem>male</asp:ListItem>
+                            <asp:ListItem>female</asp:ListItem>
+                            <asp:ListItem>others</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                     <td class="auto-style8">State:</td>
                     <td class="auto-style7">
