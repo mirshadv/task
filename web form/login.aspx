@@ -42,7 +42,7 @@
     </style>
 </head>
 <body style="z-index: 1; left: 0px; top: 0px; position: absolute; height: 32px; width: 1280px">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" onsubmit="return validateform()">
     <div class="auto-style1" style="height: 46px"><strong>Login</strong></div>
     <div style="height: 511px">
 
@@ -60,7 +60,7 @@
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td>&nbsp;</td>
-            </tr>
+            </tr>==
             <tr>
                 <td class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password:</td>
                 <td>
@@ -76,7 +76,7 @@
                     <asp:Button ID="Button2" runat="server" Text="CLEAR" />
                 </td>
                 <td class="auto-style3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="Button3" runat="server" Text="SUBMIT" />
+                    <input type="submit" value="sign in" />
                 </td>
             </tr>
             <tr>
@@ -96,5 +96,19 @@
 
     </div>
     </form>
+    <script>
+        function validateform() {
+            var name = document.getElementById("TextBox1").value;
+            var password = document.getElementById("TextBox2").value;
+
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            } else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+        }
+    </script>
     </body>
 </html>

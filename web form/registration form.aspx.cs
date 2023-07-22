@@ -18,5 +18,10 @@ namespace web_form
         {
 
         }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

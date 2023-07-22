@@ -84,8 +84,16 @@
                     </td>
                     <td class="auto-style8">State:</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" Width="197px">
-                        </asp:DropDownList>
+                        
+
+                        <select id="stateSelect" onchange="updateCityOptions()">
+        <option value="">Select a state</option>
+        <option value="kerala">kerala</option>
+        <option value="tamilnadu">tamilnadu</option>
+        <option value="karnataka">karnataka</option>
+    </select>
+
+
                     </td>
                 </tr>
                 <tr>
@@ -97,12 +105,15 @@
                 <tr>
                     <td class="auto-style4">Age:</td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox4" runat="server" Height="16px" Width="193px"></asp:TextBox>
+                        <asp:TextBox ID="age" runat="server" Height="16px" Width="193px"></asp:TextBox>
                     </td>
                     <td class="auto-style8">City:</td>
                     <td class="auto-style7">
-                        <asp:DropDownList ID="DropDownList2" runat="server" Height="17px" Width="197px">
-                        </asp:DropDownList>
+                        
+                        <select id="citySelect">
+        <option value="">Select a city</option>
+    </select>
+
                     </td>
                 </tr>
                 <tr>
@@ -134,7 +145,7 @@
                     </td>
                     <td class="auto-style8">Password:</td>
                     <td class="auto-style7">
-                        <asp:TextBox ID="TextBox10" runat="server" Height="16px" Width="193px"></asp:TextBox>
+                        <asp:TextBox ID="password" runat="server" Height="16px" Width="193px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -142,7 +153,7 @@
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style8">Re enter password:</td>
                     <td class="auto-style7">
-                        <asp:TextBox ID="TextBox11" runat="server" Height="16px" Width="193px"></asp:TextBox>
+                        <asp:TextBox ID="confirmpassword" runat="server" Height="16px" Width="193px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -156,12 +167,78 @@
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style1" colspan="2">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+                        <input type="button" onclick="valid()" value="submit" />
                     </td>
                 </tr>
             </table>
 
         </div>
     </form>
+    <script>
+    function updateCityOptions() {
+            var countrySelect = document.getElementById("stateSelect");
+            var citySelect = document.getElementById("citySelect");
+        var selectedCountry = stateSelect.value;
+        citySelect.innerHTML = '<option value="">Select a city</option>';
+
+        if (selectedCountry === "kerala") {
+            addCityOption("malappuram");
+            addCityOption("kottayam");
+            addCityOption("ernakulam");
+            addCityOption("thiruvananthapuram");
+            addCityOption("thrissur");
+
+
+        } else if (selectedCountry === "tamilnadu") {
+            addCityOption("coimbatore");
+            addCityOption("selam");
+            addCityOption("ooty");
+        } else if (selectedCountry === "karnataka") {
+            addCityOption("mysore");
+            addCityOption("hampi");
+            addCityOption("banglore");
+        }
+    }
+        function addCityOption(city) {
+            var citySelect = document.getElementById("citySelect");
+            var option = document.createElement("option");
+            option.text = city;
+            option.value = city;
+            citySelect.appendChild(option);
+
+        }
+        
+            
+        
+        function valid(email) {
+            
+            var mail = document.getElementById("email");
+            var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+            if (mail.value.match(mailformat)) {
+                alert("Valid email address!");
+            }
+            else {
+                alert("You have entered an invalid email address!");
+            }
+            var password = document.getElementById("password");
+            var confirmpassword = document.getElementById("confirmpassword");
+            if (password == '') {
+                alert("Please enter Password");
+            }
+            else if (confirmpassword == '') {
+                alert("Please enter confirm password");
+            }
+            else if (password != confirmpassword) {
+                alert("\nPassword did not match: Please try again...")
+                return false;
+            }
+            else {
+                alert("Password Match:");
+                return true;
+            }
+        }
+
+    </script>
+
 </body>
 </html>
