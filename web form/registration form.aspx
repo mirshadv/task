@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>registration form</title>
     <style type="text/css">
         .auto-style1 {
             text-align: center;
@@ -48,7 +48,7 @@
                     </td>
                     <td class="auto-style8">Email:</td>
                     <td class="auto-style7">
-                        <asp:TextBox ID="TextBox7" runat="server" Height="16px" Width="193px"></asp:TextBox>
+                        <asp:TextBox ID="email" runat="server" Height="16px" Width="193px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +74,7 @@
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Date of birth:</td>
+                    <td class="auto-style4">Gender</td>
                     <td class="auto-style5">
                         <asp:DropDownList ID="DropDownList3" runat="server">
                             <asp:ListItem>male</asp:ListItem>
@@ -123,9 +123,9 @@
                     <td class="auto-style7">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Gender:</td>
+                    <td class="auto-style4">Date Of Birth:</td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox5" runat="server" Height="16px" Width="193px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox5" runat="server" Height="16px" Width="193px" TextMode="Date"></asp:TextBox>
                     </td>
                     <td class="auto-style8">Username:</td>
                     <td class="auto-style7">
@@ -220,8 +220,8 @@
             else {
                 alert("You have entered an invalid email address!");
             }
-            var password = document.getElementById("password");
-            var confirmpassword = document.getElementById("confirmpassword");
+            var password = document.getElementById("password").value;
+            var confirmpassword = document.getElementById("confirmpassword").value;
             if (password == '') {
                 alert("Please enter Password");
             }
