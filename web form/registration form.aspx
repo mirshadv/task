@@ -7,37 +7,81 @@
     <title>registration form</title>
     <style type="text/css">
         .auto-style1 {
+             color:black;
+             font-size:30px;
             text-align: center;
         }
         .auto-style2 {
+             color:white;
             width: 1544px;
             height: 374px;
             position: absolute;
             top: 117px;
             left: 12px;
             z-index: 1;
+            font-size:20px;
         }
         .auto-style3 {
+             color:white;
             width: 100%;
         }
         .auto-style4 {
+             color:white;
             width: 178px;
         }
         .auto-style5 {
+             color:white;
             width: 299px;
         }
         .auto-style7 {
+             color:white;
             width: 378px;
         }
         .auto-style8 {
+             color:white;
             width: 274px;
         }
-    </style>
+        .foot {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+    }
+    .footer-icon {
+        width:15px;
+    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5;
+
+}
+
+        li {
+            font-size: 20px;
+            display: inline;
+            padding: 10px 20px;
+            float: right;
+        }
+
+        body {
+  background-image: url("IMAGE/pexels-james-lee-4723037.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+        
+</style>
 </head>
 <body>
+    
     <form id="form1" runat="server">
         <div class="auto-style1">
-            <em><strong>Registration Form</strong></em></div>
+            <u><em><strong>Registration Form</strong></em></u></div>
         <div class="auto-style2">
 
             <table class="auto-style3">
@@ -51,6 +95,7 @@
                         <asp:TextBox ID="email" runat="server" Height="16px" Width="193px"></asp:TextBox>
                     </td>
                 </tr>
+                
                 <tr>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style5">&nbsp;</td>
@@ -125,7 +170,7 @@
                 <tr>
                     <td class="auto-style4">Date Of Birth:</td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox5" runat="server" Height="16px" Width="193px" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="c_date" runat="server" Height="16px" Width="193px" TextMode="Date" onChange="age_validation()"></asp:TextBox>
                     </td>
                     <td class="auto-style8">Username:</td>
                     <td class="auto-style7">
@@ -171,6 +216,12 @@
                     </td>
                 </tr>
             </table>
+
+        </div>
+        <div class="foot">
+                <p> copy right protected &#169</p>
+                <img  class="footer-icon"src="IMAGE/facebook.png" />
+                <img class="footer-icon" src="IMAGE/whatsapp.png" />
 
         </div>
     </form>
@@ -239,6 +290,7 @@
         }
 
     </script>
+    <script src="validationage.js"></script>
 
 </body>
 </html>

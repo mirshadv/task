@@ -78,13 +78,13 @@ namespace web_form
         protected global::System.Web.UI.WebControls.TextBox age;
 
         /// <summary>
-        /// TextBox5 control.
+        /// c_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox c_date;
 
         /// <summary>
         /// TextBox9 control.
